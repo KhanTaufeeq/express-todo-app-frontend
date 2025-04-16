@@ -13,7 +13,7 @@ function App() {
 
   const fetchTask = () => {
     axios
-      .get("http://localhost:5000/api/tasks")
+      .get("https://express-todo-app-backend-production.up.railway.app/api/tasks")
       .then((res) => {
         setTasks(res.data);
         console.log("all tasks", res.data);
@@ -28,7 +28,7 @@ function App() {
 
   const addTask = () => {
     axios
-      .post("http://localhost:5000/api/tasks/add", {
+      .post("https://express-todo-app-backend-production.up.railway.app/api/tasks/add", {
         id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
         title: taskTitle,
         description: taskDescription,
@@ -55,7 +55,7 @@ function App() {
 
   const updateTask = (editingTask) => {
     axios
-      .put(`http://localhost:5000/api/tasks/edit/${editingTask.id}`, {
+      .put(`https://express-todo-app-backend-production.up.railway.app/api/tasks/edit/${editingTask.id}`, {
         title: editingTask.title,
         description: editingTask.description,
         Status: editingTask.Status,
@@ -71,7 +71,7 @@ function App() {
 
   const deleteTask = (id) => {
     axios
-      .delete(`http://localhost:5000/api/tasks/delete/${id}`)
+      .delete(`https://express-todo-app-backend-production.up.railway.app/api/tasks/delete/${id}`)
       .then((res) => {
         setTasks(res.data);
         console.log("delete response", res.data);
