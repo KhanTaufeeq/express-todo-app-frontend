@@ -81,7 +81,7 @@ function App() {
 
   return (
     <div className="font-sans lg:w-1/2 mx-auto border-2 rounded-[10px] bg-black max-w-lg p-6 w-full sm:w-full">
-      <h1 className="lg:text-5xl text-gray-500 font-extrabold text-3xl">
+      <h1 className="lg:text-5xl text-gray-100 font-extrabold text-3xl text-center">
         What todo app?...
       </h1>
       <div className="flex gap-4 justify-center flex-col mt-6 mb-15 bg-gray-900 rounded-[10px] p-2">
@@ -91,20 +91,20 @@ function App() {
           onChange={(event) => setTaskTitle(event.target.value)}
           placeholder="Enter title here..."
           required
-          className="bg-black focus:bg-gray-300 p-2 rounded-[10px] outline-none placeholder:text-gray-400 text-gray-400"
+          className="bg-black focus:bg-gray-300 p-2 rounded-[10px] outline-none placeholder:text-gray-100 text-gray-100"
         />
         <input
           type="text"
           value={taskDescription}
           onChange={(event) => setTaskDescription(event.target.value)}
           placeholder="Enter description here..."
-          className="bg-black focus:bg-gray-300 p-2 rounded-[10px] outline-none placeholder:text-gray-400 text-gray-400"
+          className="bg-black focus:bg-gray-300 p-2 rounded-[10px] outline-none placeholder:text-gray-100 text-gray-100"
         />
         <select
           value={taskStatus}
           onChange={(e) => setTaskStatus(e.target.value)}
           required
-          className="bg-black focus:bg-gray-300 p-2 rounded-[10px] outline-none placeholder:text-gray-400 text-gray-400"
+          className="bg-black focus:bg-gray-300 p-2 rounded-[10px] outline-none placeholder:text-gray-100 text-gray-100"
         >
           <option value="status">Status</option>
           <option value="pending">Pending</option>
@@ -113,7 +113,7 @@ function App() {
 
         <button
           onClick={addTask}
-          className="bg-black hover:bg-green-700 text-white font-bold py-2 px-4 rounded-[10px] cursor-pointer"
+          className="bg-black hover:bg-green-700 text-gray-100 font-bold py-2 px-4 rounded-[10px] cursor-pointer"
         >
           Add Task
         </button>
@@ -126,15 +126,15 @@ function App() {
               <div className="mb-5 bg-gray-900 rounded-[10px] p-2" key={task.id}>
                 <div className={`flex items-center justify-between w-full ${task.Status == 'completed' ? 'line-through text-white' : ''}`}>
                   <div>
-                    <p className="text-white text-2xl">{task.title}</p>
-                    <p className="text-white">{task.description}</p>
+                    <p className="text-gray-100 text-2xl">{task.title}</p>
+                    <p className="text-gray-100">{task.description}</p>
                   </div>
-                  <p className="text-white">{task.Status}</p>
+                  <p className="text-gray-100">{task.Status}</p>
                 </div>
                 <div className="flex items-center justify-between w-3xs mt-3">
                   <button
                     onClick={() => toggleEdit(task)}
-                    className="bg-black hover:bg-blue-700 text-white font-bold py-1 px-4 rounded cursor-pointer"
+                    className="bg-black hover:bg-blue-700 text-gray-100 font-bold py-1 px-4 rounded cursor-pointer"
                   >
                     Edit Task
                   </button>
@@ -195,14 +195,14 @@ function App() {
                         <button
                           type="submit"
                           onClick={() => updateTask(editingTask)}
-                          className="bg-black hover:bg-blue-700 text-white font-bold py-1 px-4 rounded cursor-pointer"
+                          className="bg-black hover:bg-blue-700 text-gray-100 font-bold py-1 px-4 rounded cursor-pointer"
                         >
                           Update
                         </button>
                         <button
                           type="button"
                           onClick={() => cancelEdit()}
-                          className="bg-black hover:bg-red-700 text-white font-bold py-1 px-4 rounded cursor-pointer"
+                          className="bg-black hover:bg-red-700 ttext-gray-100 font-bold py-1 px-4 rounded cursor-pointer"
                         >
                           Cancel
                         </button>
@@ -211,7 +211,7 @@ function App() {
                   )}
                   <button
                     onClick={() => deleteTask(task.id)}
-                    className="bg-black hover:bg-red-700 text-white font-bold py-1 px-4 rounded cursor-pointer"
+                    className="bg-black hover:bg-red-700 text-gray-100 font-bold py-1 px-4 rounded cursor-pointer"
                   >
                     Delete Task
                   </button>
@@ -221,7 +221,7 @@ function App() {
             );
           })
         ) : (
-          <p className="text-2xl text-white text-center">There is no task yet :(</p>
+          <p className="text-2xl text-yellow-200 text-center">There is no task yet :(</p>
         )}
       </div>
     </div>
